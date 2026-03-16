@@ -17,15 +17,12 @@
 
 <div class="artist-grid">
 
-{% for artist in artists %}
 
 <div class="artist-card card3d">
 
-{% if artist.photo %}
-<a href="{%  url 'artists:artist_details'  artist.pk %}"><img src="{{ artist.photo.url }}" alt="{{ artist.name }}"></a>
-{% else %}
+<img src="{{ artist.photo.url }}" alt="{{ artist.name }}">
+
 <img src="{% static 'images/default_artist.png' %}">
-{% endif %}
 
 <div class="artist-info">
 
@@ -38,12 +35,6 @@ Debut Year: {{ artist.debut_year }}
 </div>
 
 </div>
-
-{% empty %}
-
-<p>No artists available.</p>
-
-{% endfor %}
 
 </div>
 

@@ -1,7 +1,8 @@
 from django.db import models
+from django.core.validators import MinLengthValidator
 
 class Artist(models.Model):
-    name = models.CharField(max_length=100)
+    name = models.CharField(max_length=100, validators=[MinLengthValidator(2)])
     debut_year = models.IntegerField()
     photo = models.ImageField(upload_to="artists/", blank=True, null=True)
 
