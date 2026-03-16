@@ -4,23 +4,24 @@
 {% block extra_css %}
 <link rel="stylesheet" href="{% static 'css/album.css' %}">
 {% endblock extra_css %}
+{% block title %}
+{{ album.title }}
+{% endblock title %}
 
 {% block content %}
 
 <section class="album-section">
 
-<h1 class="page-title">Albums</h1>
+<h1 class="page-title">Album {{ album.title }}</h1>
 
 <div class="album-grid">
-
-{% for album in albums %}
 
 <div class="album-card card3d">
 
 {% if album.cover %}
-<a href="{% url 'album:album_details' album.id %}"><img src="{{ album.cover.url }}" alt="{{ album.title }}"></a>
+<img src="{{ album.cover.url }}" alt="{{ album.title }}">
 {% else %}
-<a href="{% url 'album:album_details' album.id %}"><img src="{% static 'images/default_album.png' %}" alt="album"></a>
+<img src="{% static 'images/default_album.png' %}" alt="album">
 {% endif %}
 
 <div class="album-info">
@@ -38,13 +39,6 @@ Released: {{ album.release_date }}
 </div>
 
 </div>
-
-{% empty %}
-
-<p>No albums available.</p>
-
-{% endfor %}
-
 </div>
 
 </section>
