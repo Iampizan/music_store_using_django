@@ -1,0 +1,56 @@
+{% extends "partial/base.html" %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/album.css' %}">
+{% endblock extra_css %}
+
+{% block content %}
+
+<section class="album-section">
+
+<h1 class="page-title">Albums</h1>
+
+<div class="album-grid">
+
+{% for album in albums %}
+
+<div class="album-card card3d">
+
+{% if album.cover %}
+<img src="{{ album.cover.url }}" alt="{{ album.title }}">
+{% else %}
+<img src="{% static 'images/default_album.png' %}" alt="album">
+{% endif %}
+
+<div class="album-info">
+
+<h3>{{ album.title }}</h3>
+
+<p class="artist-name">
+Artist: {{ album.artist.name }}
+</p>
+
+<p class="release-date">
+Released: {{ album.release_date }}
+</p>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<p>No albums available.</p>
+
+{% endfor %}
+
+</div>
+
+</section>
+
+{% block extra_js %}
+<script src="{% static 'js/album.js' %}"></script>
+{% endblock extra_js %}
+
+{% endblock %}

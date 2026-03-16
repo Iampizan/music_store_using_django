@@ -1,0 +1,156 @@
+/* 3D Perspective */
+
+.hero{
+perspective:1000px;
+}
+
+
+/* 3D Card */
+
+.card3d{
+transition:transform 0.3s ease, box-shadow 0.3s ease;
+transform-style:preserve-3d;
+}
+
+.card3d:hover{
+transform:rotateY(10deg) rotateX(10deg) scale(1.05);
+box-shadow:0 25px 40px rgba(0,0,0,0.4);
+}
+
+
+/* Gramophone Image */
+
+.hero-image img{
+width:420px;
+transition:transform 0.6s ease;
+}
+
+
+/* Feature cards animation */
+
+.feature-card{
+background:#4a3317;
+color:#f1d29a;
+padding:30px;
+width:250px;
+text-align:center;
+border-radius:10px;
+transform:translateY(40px);
+opacity:0;
+transition:all 0.8s ease;
+}
+
+
+/* visible animation */
+
+.feature-card.show{
+transform:translateY(0);
+opacity:1;
+}
+
+body{
+    margin:0;
+    font-family: Georgia, serif;
+    background:#e8d3a5;
+}
+
+
+/* NAVBAR */
+
+.navbar{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:20px 60px;
+    background:#e2c89d;
+}
+
+.navbar ul{
+    display:flex;
+    list-style:none;
+    gap:30px;
+}
+
+.navbar a{
+    text-decoration:none;
+    color:black;
+    font-weight:bold;
+}
+
+.logo{
+    font-size:22px;
+}
+
+
+/* HERO SECTION */
+
+.hero{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    padding:80px 60px;
+}
+
+.hero-text{
+    max-width:500px;
+}
+
+.hero-text h1{
+    font-size:60px;
+    margin-bottom:20px;
+    font-weight:900;
+}
+
+.hero-text p{
+    font-size:18px;
+    margin-bottom:30px;
+}
+
+.hero-image img{
+    width:400px;
+}
+
+
+/* BUTTONS */
+
+.btn{
+    background:black;
+    color:white;
+    padding:12px 25px;
+    text-decoration:none;
+    margin-right:10px;
+    border-radius:4px;
+}
+
+.btn:hover{
+    background:#444;
+}
+
+
+/* FEATURES */
+
+.features{
+    display:flex;
+    justify-content:center;
+    gap:30px;
+    padding:50px;
+    background:#3b2a14;
+}
+
+.feature-card{
+    background:#4a3317;
+    color:#f1d29a;
+    padding:30px;
+    width:250px;
+    text-align:center;
+}
+
+
+/* FOOTER */
+
+.footer{
+    text-align:center;
+    padding:20px;
+    background:#2c1e0f;
+    color:#d8b77c;
+}
